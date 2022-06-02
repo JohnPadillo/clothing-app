@@ -1,0 +1,27 @@
+<div class="content">
+  <div class="product__img">
+    <img [src]="product.imageURL" alt="" />
+  </div>
+
+  <div class="product__details">
+    <label class="product__title">{{ product.title }}</label>
+    <label class="product__price">{{ product.price | currency }}</label>
+    <label class="product__description">{{ product.description }}</label>
+
+    <div class="size__container">
+      <label class="size__label"
+        >{{ "Size" | uppercase }}<span class="required__symbol">*</span></label
+      >
+      <mat-button-toggle-group class="button__group" name="sizes">
+        <mat-button-toggle
+          *ngFor="let size of product?.sizeOptions"
+          (click)="selectSize(size.id)"
+          >{{ size.label }}</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+    </div>
+    <button class="addToCart__button" mat-button (click)="addToCart()">
+      Add to Cart
+    </button>
+  </div>
+</div>

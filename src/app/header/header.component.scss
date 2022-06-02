@@ -1,0 +1,46 @@
+.header {
+  background-color: #F6F6F7;
+  width: 100%;
+  min-height: 22px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+}
+
+.view__btn {
+  position: relative;
+  color: #888888;
+  font-weight: normal;
+  font-size: smaller;
+
+  margin-inline-end: 5rem;
+}
+
+.cart__list {
+  position: absolute;
+  right: 0;
+  background: white;
+  padding: 1rem;
+  border: 1px solid lightgray;
+  min-width: 320px;
+  z-index: 9999999;
+
+  img {
+    width: 5rem;
+    margin-right: 1rem;
+  }
+}
+
+.cart__item, .item__details {
+  display: flex;
+}
+
+.cart__item {
+  padding: 8px;
+}
+
+.item__details {
+  flex-direction: column;
+  text-align: start;
+}

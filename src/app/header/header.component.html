@@ -1,0 +1,15 @@
+<div class="header">
+  <button class="view__btn" mat-button (click)="viewCart()">My Cart ( {{ itemCount }} )
+    <div *ngIf="isCartOnView" class="cart__list">
+      <div *ngFor="let item of cart$ | async" class="cart__item">
+        <img [src]="item.imageURL" alt="">
+
+        <div class="item__details">
+          <label>{{ item.title }}</label>
+          <label>{{ item.quantity + 'x' }} {{ item.price | currency:'USD' }}</label>
+          <label>Size: {{ getSize(item.size) }}</label>
+        </div>
+      </div>
+    </div>
+  </button>
+</div>
